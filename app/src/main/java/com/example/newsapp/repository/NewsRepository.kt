@@ -17,10 +17,10 @@ class NewsRepository(
         RetrofitInstance.api.searchNews(searchQuery,pageNumber)
 
 
-    // local db functions
+    // Local db functions
     suspend fun insertArticle(article:Article) = db.getDao().insert(article)
 
-    fun getArticles() = db.getDao().getArticles()
+    fun getSavedArticles() = db.getDao().getSavedArticles()
 
     suspend  fun deleteArticle (article: Article) = db.getDao().deleteArticle(article)
 

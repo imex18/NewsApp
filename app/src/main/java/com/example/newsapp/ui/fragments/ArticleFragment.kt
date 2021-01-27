@@ -3,6 +3,7 @@ package com.example.newsapp.ui.fragments
 import android.os.Bundle
 import android.view.View
 import android.webkit.WebViewClient
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.example.newsapp.R
@@ -25,6 +26,16 @@ class ArticleFragment : Fragment(R.layout.fragment_article) {
         webView.apply{
             webViewClient = WebViewClient()
             loadUrl(article.url)
+
+
+            fab.setOnClickListener {
+
+                viewModel.insertArticle(article)
+
+                Toast.makeText(requireContext(),"Article saved successfully", Toast.LENGTH_SHORT).show()
+
+            }
+
         }
     }
 }
