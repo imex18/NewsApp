@@ -19,7 +19,7 @@ class RetrofitInstance {
 
 
         }
-        private val api by lazy {
+        val api by lazy {
 
             retrofit.create(NewsApi::class.java)
 
